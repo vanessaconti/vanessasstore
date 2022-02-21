@@ -1,6 +1,6 @@
 \c cta_dev;
 
-INSERT INTO test (name) VALUES
+INSERT INTO dolls (name) VALUES
 ('Monday'),
 ('Tuesday'),
 ('Wednesday'),
