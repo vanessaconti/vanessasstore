@@ -14,7 +14,7 @@ CREATE TABLE dolls (
 
 CREATE TABLE details (
     id SERIAL PRIMARY KEY, 
-    collectionsname TEXT REFERENCES dolls,
+    collectionsname TEXT REFERENCES dolls (collectionsname),
     dollsname TEXT NOT NULL, 
     doll_id TEXT NOT NULL, 
     series INT, 
