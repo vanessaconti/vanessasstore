@@ -18,5 +18,6 @@ CREATE TABLE details (
     dollsname TEXT NOT NULL, 
     doll_id TEXT NOT NULL, 
     series INT, 
+    price TEXT,
     is_rare BOOLEAN
 )

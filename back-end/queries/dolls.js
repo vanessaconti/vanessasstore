@@ -1,15 +1,15 @@
 const db = require("../db/dbConfig");
 
-const getAll = async () => {
+const getAllDolls = async () => {
   try {
-    const allDays = await db.any("SELECT * FROM dolls");
+    const allDolls = await db.any("SELECT * FROM dolls");
 
-    return allDays;
+    return allDolls;
   } catch (err) {
     return err.message;
   }
 };
 
 module.exports = {
-  getAll,
+  getAllDolls,
 };

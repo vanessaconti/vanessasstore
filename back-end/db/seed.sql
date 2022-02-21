@@ -7,13 +7,13 @@ INSERT INTO dolls (collectionsname, numberofdolls) VALUES
 ('All-Star BBs', 8),
 ('Dance Dance Dance', 12);
 
-INSERT INTO details (collectionsname, dollsname, doll_id, series, is_rare) VALUES
-('World Travel', 'Kawaii Queen', 'WT-O1', 'Series 1', false), 
-('World Travel', 'Independent Queen', 'WT-O2', 'Series 1', false),
-('World Travel', 'Golden BB', 'WT-O3', 'Series 1', false),
-('World Travel', 'Surreal Bebe', 'WT-O4', 'Series 1', false),
-('World Travel', 'Pharoh Babe', 'WT-O5', 'Series 1', false),
-('World Travel', 'Coconut Q.T', 'WT-O6', 'Series 1', true),
-('World Travel', 'Cheeky Babe', 'WT-O7', 'Series 1', false),
-('World Travel', 'Jammin', 'WT-O8', 'Series 1', true),
-('World Travel', 'Harle Quinn Girl', 'WT-O9', 'Series 1', false);
+INSERT INTO details (collectionsname, dollsname, doll_id, series, price, is_rare) VALUES
+('World Travel', 'Kawaii Queen', 'WT-O1', 'Series 1', '$10', false), 
+('World Travel', 'Independent Queen', 'WT-O2', 'Series 1', '$10',false),
+('World Travel', 'Golden BB', 'WT-O3', 'Series 1', '$10',false),
+('World Travel', 'Surreal Bebe', 'WT-O4', 'Series 1', '$10', false),
+('World Travel', 'Pharoh Babe', 'WT-O5', 'Series 1', '$10', false),
+('World Travel', 'Coconut Q.T', 'WT-O6', 'Series 1', '$10', true),
+('World Travel', 'Cheeky Babe', 'WT-O7', 'Series 1', '$10', false),
+('World Travel', 'Jammin', 'WT-O8', 'Series 1', '$10', true),
+('World Travel', 'Harle Quinn Girl', 'WT-O9', 'Series 1', '$10', false);
