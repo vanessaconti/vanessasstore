@@ -1,14 +1,15 @@
 const express = require("express");
 const dolls = express.Router();
 
-const { getAll } = require("../queries/dolls");
+const { getAllDolls } = require("../queries/dolls");
 
-dolls.get("/", async (req, res) => {
-  try {
-    const dolls = await getAll();
-    res.send(dolls);
-  } catch (error) {
-    res.status(404).json({ error: "no data" });
+dolls.get("/", async (_, response) => {
+  console.log("GET request to /dolls");
+  const allDolls = await getAllDolls();
+  if (!allDolls[0]) {
+    response.status(500).json({ error: "server error" });
+  } else {
+    response.status(200).json(allDolls);
   }
 });
 
