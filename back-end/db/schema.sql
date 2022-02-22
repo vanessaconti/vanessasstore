@@ -7,17 +7,17 @@ DROP TABLE IF EXISTS dolls;
 
 CREATE TABLE dolls (
     id SERIAL PRIMARY KEY, 
-    collectionsname TEXT, 
+    collectionsname TEXT UNIQUE, 
     numberofdolls INT
 
 );
 
 CREATE TABLE details (
     id SERIAL PRIMARY KEY, 
-    collectionsname TEXT REFERENCES dolls (collectionsname),
+    dollscollection TEXT REFERENCES dolls (collectionsname),
     dollsname TEXT NOT NULL, 
-    doll_id TEXT NOT NULL, 
-    series INT, 
+    doll_id TEXT, 
+    series TEXT, 
     price TEXT,
     is_rare BOOLEAN
 )
