@@ -1,21 +1,20 @@
-// DEPENDENCIES
-const cors = require("cors");
 const express = require("express");
-
+const cors = require("cors");
 const dollsController = require("./dollsController/dollsController");
 
-// CONFIGURATION
 const app = express();
 
-// MIDDLEWARE
 app.use(cors());
-app.use(express.json()); // Parse incoming JSON
+app.use(express.json());
 
 app.use("/dolls", dollsController);
-// ROUTES
-app.get("/", (req, res) => {
-  res.send("Welcome to the LOL Doll World!");
+
+app.get("/", (_, response) => {
+  response.status(200).send("Welcome to LOL Dolls World!");
 });
 
-// EXPORT
+app.get("*", (_, response) => {
+  response.status(404).send({ error: "Not Available" });
+});
+
 module.exports = app;

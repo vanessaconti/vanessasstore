@@ -3,21 +3,21 @@ CREATE DATABASE cta_dev;
 
 \c cta_dev;
 
-DROP TABLE IF EXISTS dolls;
+DROP TABLE IF EXISTS collections;
 
-CREATE TABLE dolls (
+CREATE TABLE collections (
     id SERIAL PRIMARY KEY, 
     collectionsname TEXT UNIQUE, 
     numberofdolls INT
 
 );
 
-CREATE TABLE details (
+CREATE TABLE dolls (
     id SERIAL PRIMARY KEY, 
-    dollscollection TEXT REFERENCES dolls (collectionsname),
+    dollscollection TEXT REFERENCES collections (collectionsname),
     dollsname TEXT NOT NULL, 
     doll_id TEXT, 
     series TEXT, 
     price TEXT,
-    is_rare BOOLEAN
+    is_featuredrare BOOLEAN
 )

@@ -1,13 +1,13 @@
 \c cta_dev;
 
-INSERT INTO dolls (collectionsname, numberofdolls) VALUES
+INSERT INTO collections (collectionsname, numberofdolls) VALUES
 ('World Travel', 9),
 ('Movie Magic', 12),
 ('Remix Rock', 4),
 ('All-Star BBs', 8),
 ('Dance Dance Dance', 12);
 
-INSERT INTO details (dollscollection, dollsname, doll_id, series, price, is_rare) VALUES
+INSERT INTO dolls (dollscollection, dollsname, doll_id, series, price, is_featuredrare) VALUES
 ('World Travel', 'Kawaii Queen', 'WT-O1', 'Series 1', '$10', false), 
 ('World Travel', 'Independent Queen', 'WT-O2', 'Series 1', '$10',false),
 ('World Travel', 'Golden BB', 'WT-O3', 'Series 1', '$10',false),
