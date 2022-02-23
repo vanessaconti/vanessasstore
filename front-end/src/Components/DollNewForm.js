@@ -23,6 +23,7 @@ function DollNewForm() {
     dollsName: "",
     dollsCollection: "",
     series: "",
+    doll_id: "",
     price: "",
     is_featuredRare: false,
   });
@@ -47,7 +48,7 @@ function DollNewForm() {
           placeholder="Name of LOL Doll"
           required
         />
-        <label htmlFor="Collection">Collection:</label>
+        <label htmlFor="dollsCollection">Collection:</label>
         <input
           id="dollsCollection"
           type="text"
@@ -62,6 +63,14 @@ function DollNewForm() {
           value={doll.series}
           onChange={handleTextChange}
           placeholder="Series Number"
+        />
+        <label htmlFor="doll_id">DOLL_ID:</label>
+        <input
+          id="doll_id"
+          type="text"
+          value={doll.doll_id}
+          onChange={handleTextChange}
+          placeholder="Collection Doll ID"
         />
         <label htmlFor="price">PRICE:</label>
         <input

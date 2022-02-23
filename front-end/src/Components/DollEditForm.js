@@ -13,6 +13,7 @@ function DollEditForm() {
     dollsCollection: "",
     series: "",
     price: "",
+    doll_id: "",
   });
 
   const updateDoll = (updatedDoll) => {
@@ -45,7 +46,7 @@ function DollEditForm() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="Dolls Name">Name:</label>
+        <label htmlFor="dollsName">Name:</label>
         <input
           id="dollsName"
           value={doll.dollsName}
@@ -54,7 +55,7 @@ function DollEditForm() {
           placeholder="Name of LOL Doll"
           required
         />
-        <label htmlFor="Collection">Collection:</label>
+        <label htmlFor="dollsCollection">Collection:</label>
         <input
           id="dollsCollection"
           type="text"
@@ -62,15 +63,23 @@ function DollEditForm() {
           onChange={handleTextChange}
           placeholder="Name of Collection"
         />
-        <label htmlFor="Series Number">Series Number:</label>
+        <label htmlFor="doll_id">doll_id:</label>
+        <input
+          id="doll_id"
+          type="text"
+          value={doll.doll_id}
+          onChange={handleTextChange}
+          placeholder="Collection Doll ID"
+        />
+        <label htmlFor="series">Series Number:</label>
         <input
           id="series"
-          type="number"
+          type="text"
           value={doll.series}
           onChange={handleTextChange}
           placeholder="Series Number"
         />
-        <label htmlFor="Price">Price:</label>
+        <label htmlFor="price">Price:</label>
         <input
           id="price"
           type="text"
