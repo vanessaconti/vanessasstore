@@ -36,9 +36,9 @@ function DollNewForm() {
     setDoll({ ...doll, [event.target.id]: event.target.value });
   };
 
-  //const handleCheckboxChange = () => {
-  // setDoll({ ...doll, is_featuredrare: !doll.is_featuredrare });
-  // };
+  const handleCheckboxChange = () => {
+    setDoll({ ...doll, is_featuredrare: !doll.is_featuredrare });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,7 +47,7 @@ function DollNewForm() {
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="dollscollection">Collection:</label>
+        <label htmlFor="dollscollection">Collection Name:</label>
         <input
           id="dollscollection"
           type="text"
@@ -56,7 +56,7 @@ function DollNewForm() {
           placeholder="Name of Collection"
         />
 
-        <label htmlFor="dollsname">Name:</label>
+        <label htmlFor="dollsname">Name of Doll:</label>
         <input
           id="dollsname"
           value={doll.dollsname}
@@ -66,7 +66,7 @@ function DollNewForm() {
           required
         />
 
-        <label htmlFor="doll_id">DOLL_ID:</label>
+        <label htmlFor="doll_id">Doll ID:</label>
         <input
           id="doll_id"
           type="text"
@@ -75,7 +75,7 @@ function DollNewForm() {
           placeholder="Collection Doll ID"
         />
 
-        <label htmlFor="series">SERIES:</label>
+        <label htmlFor="series">Collection Series:</label>
         <input
           id="series"
           type="text"
@@ -83,7 +83,7 @@ function DollNewForm() {
           onChange={handleTextChange}
           placeholder="Series Number"
         />
-        <label htmlFor="price">PRICE:</label>
+        <label htmlFor="price">Price of Doll:</label>
         <input
           id="price"
           type="text"
@@ -100,6 +100,15 @@ function DollNewForm() {
           onChange={handleTextChange}
           placeholder="Doll Image"
         />
+
+        <label htmlFor="is_featuredrare">Is Doll Rare:</label>
+        <input
+          id="is_featuredrare"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+          checked={doll.is_featuredrare}
+        />
+
         <br />
         <input type="submit" />
       </form>

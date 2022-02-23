@@ -38,7 +38,10 @@ function DollDetails() {
       <p>
         <img src={doll.image} />
       </p>
-      <p>{doll.is_featuredrare ? "true" : "false"}</p>
+      <p>
+        Doll is Rare{doll.is_featuredrare ? <span> ✔ </span> : null}{" "}
+        {doll.dollsname}
+      </p>
       <div className="showNavigation">
         <div>
           <Link to="/dolls">

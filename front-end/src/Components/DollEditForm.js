@@ -32,6 +32,10 @@ function DollEditForm() {
     setDoll({ ...doll, [event.target.id]: event.target.value });
   };
 
+  const handleCheckboxChange = () => {
+    setDoll({ ...doll, is_featuredrare: !doll.is_featuredrare });
+  };
+
   useEffect(() => {
     axios.get(`${API}/dolls/${id}`).then(
       (response) => setDoll(response.data),
@@ -46,7 +50,7 @@ function DollEditForm() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="dollsname">Name:</label>
+        <label htmlFor="dollsname">Name of Doll:</label>
         <input
           id="dollsname"
           value={doll.dollsname}
@@ -55,7 +59,7 @@ function DollEditForm() {
           placeholder="Name of LOL Doll"
           required
         />
-        <label htmlFor="dollscollection">Collection:</label>
+        <label htmlFor="dollscollection">Collection Name:</label>
         <input
           id="dollscollection"
           type="text"
@@ -63,7 +67,7 @@ function DollEditForm() {
           onChange={handleTextChange}
           placeholder="Name of Collection"
         />
-        <label htmlFor="doll_id">doll_id:</label>
+        <label htmlFor="doll_id">Doll ID:</label>
         <input
           id="doll_id"
           type="text"
@@ -71,7 +75,7 @@ function DollEditForm() {
           onChange={handleTextChange}
           placeholder="Collection Doll ID"
         />
-        <label htmlFor="series">Series Number:</label>
+        <label htmlFor="series">Collection Series:</label>
         <input
           id="series"
           type="text"
@@ -79,13 +83,20 @@ function DollEditForm() {
           onChange={handleTextChange}
           placeholder="Series Number"
         />
-        <label htmlFor="price">Price:</label>
+        <label htmlFor="price">Price of Doll:</label>
         <input
           id="price"
           type="text"
           value={doll.price}
           onChange={handleTextChange}
           placeholder="Price of Doll"
+        />
+        <label htmlFor="is_featuredrare">Is Doll Rare:</label>
+        <input
+          id="is_featuredrare"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+          checked={doll.is_featuredrare}
         />
 
         <br />
