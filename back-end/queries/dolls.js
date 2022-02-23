@@ -63,23 +63,23 @@ const updateDoll = async (id, doll) => {
     const {
       dollscollection,
       dollsname,
-      series,
       doll_id,
+      series,
       price,
       is_featuredrare,
       image,
     } = doll;
     const updatedDoll = await db.one(
-      "UPDATE dolls SET dollsCollection=$2, dollsName=$3, series=$4, price=$5, is_featuredrare=$6, doll_id=$7, image=$8 WHERE id=$1 RETURNING *",
+      "UPDATE dolls SET dollscollection=$1, dollsname=$2, doll_id=$3, series=$4, price=$5, is_featuredrare=$6, image=$7 WHERE id=$8 RETURNING *",
       [
-        id,
-        dollsCollection,
-        dollsName,
-        series,
+        dollscollection,
+        dollsname,
         doll_id,
+        series,
         price,
-        is_featuredRare,
+        is_featuredrare,
         image,
+        id,
       ]
     );
     return updatedDoll;
