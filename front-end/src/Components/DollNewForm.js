@@ -20,12 +20,12 @@ function DollNewForm() {
   };
 
   const [doll, setDoll] = useState({
-    dollsName: "",
-    dollsCollection: "",
+    dollsname: "",
+    dollscollection: "",
     series: "",
     doll_id: "",
     price: "",
-    is_featuredRare: false,
+    is_featuredrare: false,
   });
 
   const handleTextChange = (event) => {
@@ -36,23 +36,27 @@ function DollNewForm() {
     event.preventDefault();
     addDoll(doll);
   };
+
+  // const handleCheckboxChange = () => {
+  //setDoll({ ...doll, is_featuredrare: !doll.is_featuredrare });
+  // };
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="dollsName">Name:</label>
+        <label htmlFor="dollsname">Name:</label>
         <input
-          id="dollsName"
-          value={doll.dollsName}
+          id="dollsname"
+          value={doll.dollsname}
           type="text"
           onChange={handleTextChange}
           placeholder="Name of LOL Doll"
           required
         />
-        <label htmlFor="dollsCollection">Collection:</label>
+        <label htmlFor="dollscollection">Collection:</label>
         <input
-          id="dollsCollection"
+          id="dollscollection"
           type="text"
-          value={doll.dollsCollection}
+          value={doll.dollscollection}
           onChange={handleTextChange}
           placeholder="Name of Collection"
         />

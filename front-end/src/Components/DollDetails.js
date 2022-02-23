@@ -30,11 +30,15 @@ function DollDetails() {
 
   return (
     <article>
-      <h4>{doll.dollsName}</h4>
+      <h4>{doll.dollsname}</h4>
+      <p>{doll.series}</p>
+      <p>{doll.doll_id}</p>
+      <p>{doll.dollscollection}</p>
+      <p>{doll.price}</p>
       <p>
         <img src={doll.image} />
       </p>
-      <p>{doll.is_featuredRare ? "true" : "false"}</p>
+      <p>{doll.is_featuredrare ? "true" : "false"}</p>
       <div className="showNavigation">
         <div>
           <Link to="/dolls">
