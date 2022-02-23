@@ -26,8 +26,8 @@ function Dolls() {
             </tr>
           </thead>
           <tbody>
-            {dolls.map((doll) => {
-              return <Doll key={doll.dollsname} doll={doll} />;
+            {dolls.map((doll, index) => {
+              return <Doll key={doll.index} doll={doll} />;
             })}
           </tbody>
         </table>

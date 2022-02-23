@@ -8,41 +8,54 @@ function DollNewForm() {
   let navigate = useNavigate();
 
   const addDoll = (newDoll) => {
+    console.log("testing1");
     axios
       .post(`${API}/dolls`, newDoll)
       .then(
-        () => {
+        (response) => {
+          console.log(response);
           navigate(`/dolls`);
-        },
-        (error) => console.error(error)
+        }
+        //,
+        //(error) => console.error(error)
       )
       .catch((c) => console.warn("catch", c));
   };
 
   const [doll, setDoll] = useState({
-    dollsname: "",
     dollscollection: "",
-    series: "",
+    dollsname: "",
     doll_id: "",
+    series: "",
     price: "",
     is_featuredrare: false,
+    image: "",
   });
 
   const handleTextChange = (event) => {
     setDoll({ ...doll, [event.target.id]: event.target.value });
   };
 
+  //const handleCheckboxChange = () => {
+  // setDoll({ ...doll, is_featuredrare: !doll.is_featuredrare });
+  // };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     addDoll(doll);
   };
-
-  // const handleCheckboxChange = () => {
-  //setDoll({ ...doll, is_featuredrare: !doll.is_featuredrare });
-  // };
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
+        <label htmlFor="dollscollection">Collection:</label>
+        <input
+          id="dollscollection"
+          type="text"
+          value={doll.dollscollection}
+          onChange={handleTextChange}
+          placeholder="Name of Collection"
+        />
+
         <label htmlFor="dollsname">Name:</label>
         <input
           id="dollsname"
@@ -52,22 +65,7 @@ function DollNewForm() {
           placeholder="Name of LOL Doll"
           required
         />
-        <label htmlFor="dollscollection">Collection:</label>
-        <input
-          id="dollscollection"
-          type="text"
-          value={doll.dollscollection}
-          onChange={handleTextChange}
-          placeholder="Name of Collection"
-        />
-        <label htmlFor="series">SERIES:</label>
-        <input
-          id="series"
-          type="text"
-          value={doll.series}
-          onChange={handleTextChange}
-          placeholder="Series Number"
-        />
+
         <label htmlFor="doll_id">DOLL_ID:</label>
         <input
           id="doll_id"
@@ -75,6 +73,15 @@ function DollNewForm() {
           value={doll.doll_id}
           onChange={handleTextChange}
           placeholder="Collection Doll ID"
+        />
+
+        <label htmlFor="series">SERIES:</label>
+        <input
+          id="series"
+          type="text"
+          value={doll.series}
+          onChange={handleTextChange}
+          placeholder="Series Number"
         />
         <label htmlFor="price">PRICE:</label>
         <input
@@ -85,6 +92,14 @@ function DollNewForm() {
           placeholder="Price of Doll"
         />
 
+        <label htmlFor="image">Image:</label>
+        <input
+          id="image"
+          type="file"
+          value={doll.image}
+          onChange={handleTextChange}
+          placeholder="Doll Image"
+        />
         <br />
         <input type="submit" />
       </form>
