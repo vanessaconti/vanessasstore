@@ -19,5 +19,6 @@ CREATE TABLE dolls (
     doll_id TEXT, 
     series TEXT, 
     price TEXT,
-    is_featuredrare BOOLEAN
+    is_featuredrare BOOLEAN, 
+    image TEXT
 )

@@ -18,11 +18,12 @@ const getDoll = async (id) => {
 };
 
 const createDoll = async (doll) => {
-  const { dollsCollection, dollsName, series, price, is_featuredRare } = doll;
+  const { dollsCollection, dollsName, series, price, is_featuredRare, image } =
+    doll;
   try {
     const newDoll = await db.one(
-      "INSERT INTO dolls (id, dollsCollection, dollsName, series, price, is_featuredRare) VALUES ($1, $2, $3, $4, $5) RETURNING * ",
-      [dollsCollection, dollsName, series, price, is_featuredRare]
+      "INSERT INTO dolls (id, dollsCollection, dollsName, series, price, is_featuredRare, image) VALUES ($1, $2, $3, $4, $5) RETURNING * ",
+      [dollsCollection, dollsName, series, price, is_featuredRare, image]
     );
     return newDoll;
   } catch (error) {
@@ -44,7 +45,14 @@ const deleteDoll = async (id) => {
 
 const updateDoll = async (id, doll) => {
   try {
-    const { dollsCollection, dollsName, series, price, is_featuredRare } = doll;
+    const {
+      dollsCollection,
+      dollsName,
+      series,
+      price,
+      is_featuredRare,
+      image,
+    } = doll;
     const updatedDoll = await db.one(
       "UPDATE dolls SET dollsCollection=$2, dollsName=$3, series=$4, price=$5, is_featuredRare=$6 WHERE id=$1 RETURNING *",
       [id, dollsCollection, dollsName, series, price, is_featuredRare]
