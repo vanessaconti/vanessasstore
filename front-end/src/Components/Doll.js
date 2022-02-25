@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 
 function Doll({ doll }) {
   return (
-    <tr>
+    <tr className="each-doll">
       <td>{doll.dollsname}</td>
       <td>
-        <Link to={`/dolls/${doll.id}`}>👧🏻👧🏿👧🏽👧🏾👧🏼</Link>
+        <Link className="each-emoji" to={`/dolls/${doll.id}`}>
+          👧🏻👧🏿👧🏽👧🏾👧🏼
+        </Link>
       </td>
     </tr>
   );

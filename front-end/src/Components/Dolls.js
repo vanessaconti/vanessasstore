@@ -21,8 +21,9 @@ function Dolls() {
         <table>
           <thead>
             <tr>
-              <th>Dolls</th>
-              <th>More Info Doll Galore</th>
+              <th className="dollname">Doll Names:</th>
+
+              <th>Click Dolls For More Info </th>
             </tr>
           </thead>
           <tbody>

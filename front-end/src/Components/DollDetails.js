@@ -38,10 +38,7 @@ function DollDetails() {
       <p>
         <img src={doll.image} />
       </p>
-      <p>
-        Doll is Rare{doll.is_featuredrare ? <span> ✔ </span> : null}{" "}
-        {doll.dollsname}
-      </p>
+      <p>Doll is Rare{doll.is_featuredrare ? <span> ✔ </span> : null} </p>
       <div className="showNavigation">
         <div>
           <Link to="/dolls">
@@ -50,7 +47,7 @@ function DollDetails() {
         </div>
         <div>
           <Link to={`/dolls/${doll.id}/edit`}>
-            <button>Edit</button>
+            <button className="edit">Edit</button>
           </Link>
         </div>
         <div>

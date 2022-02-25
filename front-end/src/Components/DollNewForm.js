@@ -45,72 +45,91 @@ function DollNewForm() {
     addDoll(doll);
   };
   return (
-    <div className="New">
+    <div className="newform">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="dollscollection">Collection Name:</label>
-        <input
-          id="dollscollection"
-          type="text"
-          value={doll.dollscollection}
-          onChange={handleTextChange}
-          placeholder="Name of Collection"
-        />
+        <div className="form-group">
+          <label htmlFor="dollscollection">Collection Name:</label>
+          <input
+            className="form-control"
+            id="dollscollection"
+            type="text"
+            value={doll.dollscollection}
+            onChange={handleTextChange}
+            placeholder="Name of Collection"
+          />
+        </div>
 
-        <label htmlFor="dollsname">Name of Doll:</label>
-        <input
-          id="dollsname"
-          value={doll.dollsname}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name of LOL Doll"
-          required
-        />
+        <div className="form-group">
+          <label htmlFor="dollsname">Name of Doll:</label>
+          <input
+            className="form-control"
+            id="dollsname"
+            value={doll.dollsname}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="Name of LOL Doll"
+            required
+          />
+        </div>
 
-        <label htmlFor="doll_id">Doll ID:</label>
-        <input
-          id="doll_id"
-          type="text"
-          value={doll.doll_id}
-          onChange={handleTextChange}
-          placeholder="Collection Doll ID"
-        />
+        <div className="form-group">
+          <label htmlFor="doll_id">Doll ID:</label>
+          <input
+            className="form-control"
+            id="doll_id"
+            type="text"
+            value={doll.doll_id}
+            onChange={handleTextChange}
+            placeholder="Collection Doll ID"
+          />
+        </div>
 
-        <label htmlFor="series">Collection Series:</label>
-        <input
-          id="series"
-          type="text"
-          value={doll.series}
-          onChange={handleTextChange}
-          placeholder="Series Number"
-        />
-        <label htmlFor="price">Price of Doll:</label>
-        <input
-          id="price"
-          type="text"
-          value={doll.price}
-          onChange={handleTextChange}
-          placeholder="Price of Doll"
-        />
+        <div className="form-group">
+          <label htmlFor="series">Collection Series:</label>
+          <input
+            id="series"
+            type="text"
+            value={doll.series}
+            onChange={handleTextChange}
+            placeholder="Series Number"
+          />
+        </div>
 
-        <label htmlFor="image">Image:</label>
-        <input
-          id="image"
-          type="file"
-          value={doll.image}
-          onChange={handleTextChange}
-          placeholder="Doll Image"
-        />
+        <div className="form-group">
+          <label htmlFor="price">Price of Doll:</label>
+          <input
+            id="price"
+            type="text"
+            value={doll.price}
+            onChange={handleTextChange}
+            placeholder="Price of Doll"
+          />
+        </div>
 
-        <label htmlFor="is_featuredrare">Is Doll Rare:</label>
-        <input
-          id="is_featuredrare"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={doll.is_featuredrare}
-        />
+        <div className="form-group">
+          <label htmlFor="image">Image:</label>
+          <input
+            className="form-control"
+            id="image"
+            type="file"
+            value={doll.image}
+            onChange={handleTextChange}
+            placeholder="Doll Image"
+          />
+        </div>
 
-        <br />
-        <input type="submit" />
+        <div className="form-group">
+          <label htmlFor="is_featuredrare">Is Doll Rare:</label>
+          <input
+            className="form-control is_check"
+            id="is_featuredrare"
+            type="checkbox"
+            onChange={handleCheckboxChange}
+            checked={doll.is_featuredrare}
+          />
+        </div>
+
+        <input className="submit" type="submit" />
       </form>
     </div>
   );
