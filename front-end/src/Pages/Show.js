@@ -4,7 +4,7 @@ function Show() {
   return (
     <>
       <div className="Show">
-        <h2>Show</h2>
+        <h2>LOL Surprise Doll Details</h2>
         <DollDetails />
       </div>
     </>
